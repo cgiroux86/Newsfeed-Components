@@ -150,6 +150,10 @@ function create(title,date,firstP,secondP,thirdP) {
 
   let span = document.createElement('span')
   span.classList.add('expandButton')
+  span.textContent = '\u25bc'
+  span.addEventListener('click', () => {
+    article.classList.toggle('article-open')
+  })
  
 
   article.append(h2,p,p1,p2,p3,span)
@@ -160,15 +164,15 @@ function create(title,date,firstP,secondP,thirdP) {
 }
 
 let body = document.querySelector('body')
-console.log(body)
+
 
 data.map(data => {
   body.appendChild(create(data.title, data.date, data.firstParagraph,data.secondParagraph,data.thirdParagraph))
 })
 
-let articleCard = document.querySelectorAll('.article')
-console.log(articleCard)
+// let articleCard = document.querySelectorAll('.article')
+// console.log(articleCard)
 
-articleCard.forEach(elem => elem.addEventListener('click', e => {
-  elem.classList.toggle('article-open')
-}))
+// articleCard.forEach(elem => elem.addEventListener('click', e => {
+//   elem.classList.toggle('article-open')
+// }))
